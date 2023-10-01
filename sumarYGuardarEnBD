@@ -1,0 +1,28 @@
+// Función para sumar dos valores y procesar en la base de datos SQL
+function sumarYGuardarEnBD(valor1, valor2) {
+  // Sumar los valores
+  var suma = valor1 + valor2;
+
+  // Crear una consulta SQL para guardar la suma en la base de datos
+  var consultaSQL = "INSERT INTO tabla (columna_suma) VALUES (" + suma + ");";
+
+  // Aquí podrías enviar la consulta SQL a tu base de datos para ejecutarla
+  // Ejemplo de cómo enviar la consulta usando AJAX (requiere una llamada a un servidor)
+  // $.ajax({
+  //   type: "POST",
+  //   url: "tu_servidor/guardar_en_bd.php",
+  //   data: { consulta: consultaSQL },
+  //   success: function (response) {
+  //     console.log("Consulta ejecutada correctamente en la base de datos");
+  //   }
+  // });
+
+  // Retornar la consulta SQL (solo para propósitos de demostración)
+  return consultaSQL;
+}
+
+// Ejemplo de uso de la función
+var valor1 = 5;
+var valor2 = 10;
+var consultaGenerada = sumarYGuardarEnBD(valor1, valor2);
+console.log("Consulta SQL generada: " + consultaGenerada);
